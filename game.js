@@ -23,6 +23,8 @@ let scoreDiv = document.getElementById("scoreDisplay");
 let score = 0;
 let highScore = 0;
 
+let scored = false;
+
 document.body.onkeyup = function (e) {
   if (e.code == "Space") {
     birdVelocity = flapSpeed;
@@ -35,7 +37,21 @@ document.getElementById("restartButton").addEventListener("click", function () {
   loop();
 });
 
-function increaseScore() {}
+function increaseScore() {
+  if (
+    birdX > pipeX + pipeWidth &&
+    (birdY < pipeY + pipeGap || birdY + birdHeight > pipeY + pipeGap) &&
+    !scored
+  ) {
+    score++;
+    scoreDiv.innerHTML = score;
+    scored = true;
+  }
+
+  if (birdX < pipeX + pipeWidth) {
+    scored = false;
+  }
+}
 
 function collisionCheck() {
   const birdBox = {
@@ -97,7 +113,17 @@ function showEndMenu() {
   document.getElementById("bestScore").innerHTML = highScore;
 }
 
-function resetGame() {}
+function resetGame() {
+  birdX = 50;
+  birdY = 50;
+  birdVelocity = 0;
+  birdAcceleration = 0.1;
+
+  pipeX = 400;
+  pipeY = canvas.height - 200;
+
+  score = 0;
+}
 
 function endGame() {
   showEndMenu();
@@ -127,6 +153,7 @@ function loop() {
   birdVelocity += birdAcceleration;
   birdY += birdVelocity;
 
+  increaseScore();
   requestAnimationFrame(loop);
 }
 
