@@ -1,5 +1,5 @@
 # Flappy Bird Game
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/jgabfalcao/flappyBirdGame/blob/main/LICENSE) 
 
 # Sobre o projeto 
 
@@ -8,7 +8,7 @@ Flappy Bird Game é uma aplicação front end desktop construída durante um per
 Flappy Bird é um jogo extremamente simples onde um pássaro é constantemente puxado para baixo e o toque do usuário na barra de espaço faz bater as asas, suspendendo-se no ar por alguns instantes. Esse complicado movimento é então colocado à prova conforme você tem que passar no meio de canos, sem esbarrar neles.
 
 ## Layout desktop
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+![Mobile 1](https://github.com/jgabfalcao/flappyBirdGame/blob/main/assets/mobile.gif) 
 
 # Tecnologias utilizadas
 ## Front end
